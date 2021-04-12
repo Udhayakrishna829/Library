@@ -1,0 +1,14 @@
+<div class="right">
+  <h1 class="head">List of Books</h1>
+  <LinkTo @route="selects">
+    <button class="btn btn-primary {{unless this.show_button "hide"}}" onclick={{action "add"}}>Confirm Selected Books</button>
+  </LinkTo>
+</div>
+
+<div class="listing-container">
+  {{#each this.model as |book|}}
+    <BookList @books={{book}} @onConfirm={{action "doit"}} @onRemove={{action "removeit"}} @onIncreament={{action "increament"}} @onCheck={{action "check"}}/>
+  {{/each}}
+</div>
+<h1 class="head">----End----</h1>
+{{outlet}}

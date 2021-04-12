@@ -1,0 +1,56 @@
+<h1 class="head">Add Book</h1>
+<form class="form-class">
+  {{#if this.istitle}}
+    <p class="required">*Title is required</p>
+  {{/if}}
+  <div class="form-group">
+    <label for="title">Title</label>
+    <Input @id="title" @value={{this.title}} class="form-control"/>
+  </div>
+
+  {{#if this.isauthor}}
+    <p class="required">*Author is required</p>
+  {{/if}}
+  <div class="form-group">
+    <label for="author">Author</label> 
+    <Input @id="author" @value={{this.author}} class="form-control"/>
+  </div>
+
+  {{#if this.isgenre}}
+    <p class="required">*Genre is required</p>
+  {{/if}}
+  <div class="form-group">
+    <label for="genre">Genre</label> 
+    <Input @id="genre" @value={{this.genre}} class="form-control"/>
+  </div>
+
+  {{#if this.isimg}}
+    <p class="required">*Image URl is required</p>
+  {{/if}}
+  <div class="form-group">
+    <label for="image">Image Url</label>
+    <Input @id="image" @value={{this.image}} class="form-control"/>
+  </div>
+
+  {{#if this.isdesc}}
+    <p class="required">*Description is required</p>
+  {{/if}}
+  <div class="form-group">
+    <label for="description">Description</label>
+    <Textarea @id="description" @value={{this.description}} @rows="3" class="form-control"/>
+  </div>
+
+  {{#if this.isno}}
+    <p class="required">*No of books is required</p>
+  {{/if}}
+  <div class="form-group">
+    <label for="no">Number of books</label>
+    <Input @id="no" @type="number" @value={{this.noofbooks}} class="form-control"/>
+  </div>
+
+  {{#if this.isreq}}
+    <p class="required req">Fill all the fields</p>
+  {{/if}}
+  <button type="button" onclick={{action "tryit"}} class="btn btn-info btn1">Add book</button>
+</form>
+{{outlet}}

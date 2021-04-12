@@ -1,5 +1,23 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<div class="menu">
+  <LinkTo @route="index">
+    <div class="dis-img"></div>
+    <h1>
+      <em>Library</em>
+    </h1>
+  </LinkTo>
+  <div class="links">
+    <LinkTo @route="books" class="menu-show">
+      Books
+    </LinkTo>
+    <LinkTo @route="add-books" class="menu-add">
+      Add
+    </LinkTo>
+    <LinkTo @route="selects" class="menu-show">
+      My books
+    </LinkTo>
+  </div>
+  
+
+</div>
 
 {{outlet}}

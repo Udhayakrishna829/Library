@@ -1,0 +1,37 @@
+<article class="listing">
+  <h1>{{@books.title}}</h1>
+  {{#if (shifter @books.id this.isWide) }}
+    <a onclick={{action "toggleImageSize"}} class="image {{if this.isWide "wide"}}" role="button">
+      <img src={{@books.image}} alt={{@books.title}}>
+      <small>View</small>
+    </a>
+  {{/if}}
+  <div class="details">
+    <div class="detail owner">
+      <span>Author:</span> {{@books.author}}
+    </div>
+    <div class="detail owner">
+      <span>Genre:</span> {{@books.genre}}
+    </div>
+    <div class="detail type">
+      <span>Description:</span> {{@books.description}}
+    </div>
+    <div class="detail bedrooms">
+      <span>Number of books remaining:</span> {{@books.noofbooks}}
+    </div>
+    <p class="selected {{unless this.hide "hide"}}">selected</p>
+    {{#if @books.noofbooks }}
+      <button onclick={{action "do" @books.id @books}} class="btn btn-info {{if this.hide "hide"}}">choose</button>
+    {{else}}
+      <p class="selected oos">Out of Stock</p>
+    {{/if}}
+    <button onclick={{action "remove" @books.id @books}} class="btn btn-info {{unless this.hide "hide"}}">Remove</button>
+  </div>
+  {{#unless (shifter @books.id this.isWide) }}
+    <a onclick={{action "toggleImageSize"}} class="image {{if this.isWide "wide"}}" role="button">
+      <img src={{@books.image}} alt={{@books.title}}>
+      <small>View</small>
+    </a>
+  {{/unless}}
+  
+</article>

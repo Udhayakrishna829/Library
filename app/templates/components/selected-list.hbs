@@ -1,0 +1,27 @@
+<article class="listing">
+    <h1>{{@books.title}}</h1>
+        <a onclick={{action "toggleImageSize"}} class="image {{if this.isWide "wide"}}" role="button">
+        <img src={{@books.image}} alt={{@books.title}}>
+        <small>View</small>
+        </a>
+    <div class="details">
+        <div class="detail owner">
+            <span>Author:</span> {{@books.author}}
+        </div>
+        <div class="detail owner">
+            <span>Genre:</span> {{@books.genre}}
+        </div>
+        <div class="detail type">
+            <span>Description:</span> {{@books.description}}
+        </div>
+        <div class="detail bedrooms">
+            <span>Number of books:</span> {{@books.noofbooks}}
+        </div>
+        <div class="detail bedrooms">
+            <span>Borrowed date:</span> {{@books.bdate}}
+        </div>
+        
+    </div>
+    
+
+</article>

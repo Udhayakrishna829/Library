@@ -1,0 +1,15 @@
+<div class="added-container">
+  <img class="image" src="https://bis.gov.in/wp-content/uploads/2018/11/library.jpg"/>
+  <h1>Books You have Borrowed</h1>
+  <div class="listing-container">
+    {{#each @model as |book|}}
+      <SelectedList @books={{book}} />
+    {{else}}
+      <h3>None</h3>
+    {{/each}}
+  </div>
+  <LinkTo @route="index" class="marg">
+  	<button class="btn btn-primary">Go to Home</button>
+  </LinkTo>
+</div>
+{{outlet}}
